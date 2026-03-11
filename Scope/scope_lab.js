@@ -28,6 +28,29 @@ function show() {
 
 show(); 
 
-console.log(functionVar);
-console.log(functionLet);
-console.log(functionConst); 
+//console.log(functionVar);
+//console.log(functionLet);
+//console.log(functionConst); 
+
+//Test block 
+{
+    var variableVar = "Variable Var";
+    let variableLet = "Variable Let";
+    const variableConst = "Variable Const";
+
+    //variableVar = "Changed Var";
+    //variableLet = "Changed Let";
+    //variableConst = "Changed Const"; 
+
+    //console.log(variableVar);
+    //console.log(variableLet);
+    //console.log(variableConst);
+}
+
+    variableVar = "Changed Var";
+    variableLet = "Changed Let";
+    variableConst = "Changed Const"; 
+
+    console.log(variableVar);
+    console.log(variableLet);
+    console.log(variableConst);
