@@ -50,3 +50,28 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not Authenticated";
 
 console.log("Authentication Status: ", authenticationStatus);
+
+let authorizationLevel = "Enrolled Member";
+let dietaryServices = "No"; 
+let oneOnOneInteraction = "No"; 
+
+switch(authorizationLevel) {
+    case "Employee": 
+        dietaryServices = "Yes, Full";
+        break;
+    case "Enrolled Member": 
+        dietaryServices = "Yes, Full";
+        oneOnOneInteraction = "Yes"; 
+        break;
+    case "Suscriber": 
+        dietaryServices = "Yes, Partial"
+        break;
+    case "Non Suscriber": 
+        dietaryServices = "No";
+        break;
+    default: 
+        dietaryServices = "No";
+}
+
+console.log("Does the user have access to Dietary Services? ", dietaryServices, " And One on One Interaction with a Dietitian? ", oneOnOneInteraction);
+
