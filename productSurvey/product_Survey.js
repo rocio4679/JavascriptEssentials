@@ -6,7 +6,7 @@ function submitFeedback() {
     const designation = document.getElementById('designation').value;
     const productType = document.getElementById('productType').value;
     const feedback = document.getElementById('feedbackText').value;
-    const experience = document.getElementById('userExperience').value;
+    const experience = document.getElementById('experienceText').value;
 
     alert('Thank you for your valuable feedback!');
 
