@@ -1,6 +1,6 @@
 let books = [];
 
-addBook() {
+function addBook() {
     const bookName = document.getElementById('bookName').value;
     const authorName = document.getElementById('authorName').value;
     const bookDescription = document.getElementById('bookDescription').value;
@@ -13,7 +13,7 @@ addBook() {
             pagesNumber: pagesNumber
         };
         books.push(book);
-        showbooks();
+        showBooks();
         clearInputs();
     } else {
         alert('Please fill in all fields correctly!');
@@ -26,12 +26,31 @@ function showBooks() {
         <p><strong>Author Name: </strong>${book.authorName}</p>
         <p><strong>Book Description: </strong> ${book.bookDescription}</p>
         <p><strong>No. of Pages: </strong> ${book.pagesNumber} pages(s)</p>
-        <button onclock="editbook(${index})">Edit</button>`
+        <button onclick="editBook(${index})">Edit</button>
+        <button onclick="deleteBook(${index})">Delete</button>`
     );
-    document.getElementById('books').innerHTML = booksDiv.join('');
+    document.getElementById('Books').innerHTML = booksDiv.join('');
 }
 
-function editbook(index) {
+function editBook(index) {
     const book = books[index]; 
     document.getElementById('bookName').value = book.name; 
+    document.getElementById('authorName').value = book.authorName;
+    document.getElementById('bookDescription').value = book.bookDescription;
+    document.getElementById('pagesNumber').value = book.pagesNumber;
+    books.splice(index, 1); //Remove old entry
+    showBooks(); //Refresh list
+}
+
+function deleteBook(index) {
+    //Remove the book given
+    books.splice(index, 1);  
+    showBooks(); //Refresh
+}
+
+function clearInputs() {
+    document.getElementById('bookName').value = '';
+    document.getElementById('authorName').value = '';
+    document.getElementById('bookDescription').value = '';
+    document.getElementById('pagesNumber').value = '';
 }
