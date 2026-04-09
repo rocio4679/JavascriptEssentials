@@ -1,4 +1,4 @@
-const colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink', 'red', 'blue', 'green', 'purple', 'orange', pink]; 
+const colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink', 'red', 'blue', 'green', 'purple', 'orange', 'pink']; 
 let cards = shuffle(colors.concat(colors));
 let selectedCards = [];
 let score = 0;
@@ -59,7 +59,7 @@ function checkMatch() {
 }
 
 function startGame() {
-    let timeLeft = 30;
+    timeLeft = 30;
     startbtn.disabled = true;
     score = 0; //Reset Score to Zero
     scoreElement.textContent = `Score: ${score}`;
@@ -78,8 +78,8 @@ function startGameTimer(timeleft){
         timerElement.textContent = `Time Left: ${timeLeft}`;
 
         if(timeLeft === 0) {
+            //let timeLeft = 30;
             clearInterval(gameInterval);
-            let timeLeft = 30; 
             alert('Game Over!');
             startbtn.disabled = false; 
         }
