@@ -10,8 +10,8 @@ var individuals = xhr.response.individuals;
 var individualsDiv = document.getElementById('individuals');
 
   individuals.forEach(function(individual) {
-      var individualsDiv = document.createElement('div');
-      inidivualsDiv.classList.add('individual');
+      var individualDiv = document.createElement('div');
+      individualDiv.classList.add('individual');
 
       var name = document.createElement('h2');
       name.textContent = individual.name;
@@ -28,11 +28,13 @@ var individualsDiv = document.getElementById('individuals');
       var version = document.createElement('p');
       version.textContent = individual.version; 
 
-      individualsDiv.appendChild(name);
-      individualsDiv.appendChild(language);
-      individualsDiv.appendChild(id);
-      individualsDiv.appendChild(bio);
-      individualsDiv.appendChild(version);
+      individualDiv.appendChild(name);
+      individualDiv.appendChild(language);
+      individualDiv.appendChild(id);
+      individualDiv.appendChild(bio);
+      individualDiv.appendChild(version);
+
+      individualsDiv.appendChild(individualDiv);
     
     });
 }
